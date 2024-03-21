@@ -1,0 +1,12 @@
+services:
+  shop-nginx:
+    ports:
+      - "8080:80"
+
+  shop-db:
+    ports:
+      - "3306:3306"
+
+  shop-vue-app:
+    ports:
+      - "8081:8080"

@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  shop-nginx:
+    image: nginx:stable-alpine
+    depends_on:
+      - shop-php
+    networks:
+      network:
+    volumes:
+      - ".docker/nginx/default.conf:/etc/nginx/conf.d/default.conf"
+      - ".:/var/www/html"
+
+  shop-php:
+    build:
+      context: .docker/
+    volumes:
+      - ".:/var/www/html"
+    networks:
+      network:
+
+  shop-db:
+    image: mariadb:10.11.2
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: shop
+      MYSQL_USER: shop
+      MYSQL_PASSWORD: shop
+      MYSQL_DATABASE: shop_db
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      network:
+
+  shop-vue-app:
+    image: node:20.9.0
+    volumes:
+      - ./shop_front:/app
+    working_dir: /app
+    command: sh -c "npm install && yarn serve"
+    networks:
+      network:
+
+  shop-vue-nginx:
+    image: nginx:latest
+    volumes:
+      - ./shop_front/dist:/usr/share/nginx/html
+    networks:
+      network:
+    depends_on:
+      - shop-vue-app
+
+networks:
+  network:
+    name: shop
+
+volumes:
+  dbdata:

@@ -5,6 +5,8 @@
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
     brochures_directory: '%kernel.project_dir%/public/uploads/'
+    nbp.api_url: '%env(NBP_API_URL)%'
+
 services:
     # default configuration for services in *this* file
     _defaults:
@@ -23,5 +25,9 @@ services:
     App\Application\Common\Handler\FileManager:
         arguments:
             $targetDirectory: '%brochures_directory%'
+
+    App\Infrastructure\NBP\HttpClient:
+        arguments:
+            $url: '%nbp.api_url%'
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

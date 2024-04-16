@@ -1,0 +1,35 @@
+{% extends 'layout/list.html.twig' %}
+
+{% block title %}{{ "category.list.title"|trans({},'ui') }}{% endblock %}
+
+{% block list_title %}{{ "category.list.title"|trans({},'ui') }}{% endblock %}
+
+{% block actions %}
+    <a type="button" href="{{ path('app_category_create') }}" class="btn btn-primary ">{{ "category.action.add"|trans({},'ui') }}</a>
+{% endblock %}
+
+{% block table_head %}
+    <tr>
+        <th>{{ "category.list.fields.name"|trans({},'ui') }}</th>
+        <th>{{ "category.list.fields.priority"|trans({},'ui') }}</th>
+        <th class="text-end">{{ "category.list.fields.actions"|trans({},'ui') }}</th>
+    </tr>
+{% endblock %}
+{% block table_body %}
+    {% for category in categories %}
+        <tr>
+            <td>{{ category.name }}</td>
+            <td>{{ category.priority }}</td>
+            <td class="text-end">
+                <a type="button" class="btn btn-primary"
+                   href="{{ path('app_category_update', {id: category.id} ) }}">
+                    <i class="bi bi-pencil-square bi">E</i>
+                </a>
+                <a type="button" class="btn btn-danger"
+                   href="{{ path('app_category_delete', {id: category.id} ) }}">
+                    <i class="bi bi-pencil-square bi">D</i>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+{% endblock %}

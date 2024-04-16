@@ -22,4 +22,12 @@ class Repository extends ServiceEntityRepository
         $em->persist($product);
         $em->flush();
     }
+
+    public function delete(Product $product): void
+    {
+        $em = $this->getEntityManager();
+
+        $em->remove($product);
+        $em->flush();
+    }
 }

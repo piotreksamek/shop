@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace App\Application;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\SerializerInterface;
 
-abstract class AbstractApiController
+abstract class AbstractApiController extends AbstractController
 {
     public function __construct(private readonly SerializerInterface $serializer)
     {
@@ -16,13 +17,13 @@ abstract class AbstractApiController
 
     protected function successData(mixed $data, int $response = Response::HTTP_OK): JsonResponse
     {
-        return $this->json([
+        return $this->sendJson([
             'response' => true,
             'data' => $data,
         ], $response);
     }
 
-    private function json(mixed $data, int $status = 200, array $headers = [], array $context = []): JsonResponse
+    private function sendJson(mixed $data, int $status = 200, array $headers = [], array $context = []): JsonResponse
     {
         $json = $this->serializer->serialize($data, 'json', array_merge([
             'json_encode_options' => JsonResponse::DEFAULT_ENCODING_OPTIONS,

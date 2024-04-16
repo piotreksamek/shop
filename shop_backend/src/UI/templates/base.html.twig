@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Home{% endblock %}</title>
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body style="background-color: #f4f6f9;">
+{% block navbar %}
+    {% include 'layout/navbar.html.twig' %}
+{% endblock %}
+{% block container %}
+    <div class="content">
+        <section class="content">
+            <div class="container-fluid">
+                <div class="pt-2">
+                    {% block flash_message %}
+                        <div id="common-flash-bag" class="alert d-none"></div>
+                        {% for message in app.flashes('success') %}
+                            <div class="alert alert-success">
+                                {{ message|trans({},'ui') }}
+                            </div>
+                        {% endfor %}
+                        {% for message in app.flashes('success_raw') %}
+                            <div class="alert alert-success">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+
+                        {% for message in app.flashes('error') %}
+                            <div class="alert alert-danger">
+                                {{ message|trans({},'ui') }}
+                            </div>
+                        {% endfor %}
+                        {% for message in app.flashes('error_raw') %}
+                            <div class="alert alert-danger">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+
+                        {% for message in app.flashes('warning') %}
+                            <div class="alert alert-warning">
+                                {{ message|trans({},'ui') }}
+                            </div>
+                        {% endfor %}
+                        {% for message in app.flashes('warnings') %}
+                            {% for mess in message %}
+                                {% if mess is defined and mess != '' %}
+                                    <div class="alert alert-warning">
+                                        {{ mess|trans({},'ui') }}
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                        {% for message in app.flashes('warning_raw') %}
+                            <div class="alert alert-warning">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endblock %}
+                </div>
+                {% block body %}
+                {% endblock %}
+            </div>
+        </section>
+    </div>
+{% endblock %}
+{% block javascripts_bottom %}{% endblock %}
+</body>
+</html>

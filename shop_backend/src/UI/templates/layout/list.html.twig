@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <div class="card card-body me-5 ms-5">
+        <h1>{% block list_title %}{% endblock %}</h1>
+    </div>
+    <div class="card m-5">
+        <div class="card-body">
+            {% block actions %}
+            {% endblock %}
+        </div>
+    </div>
+    {% block list %}
+        <div class="card card-body m-5">
+            <table class="table">
+                <thead class="thead-dark">
+                {% block table_head %}
+                {% endblock %}
+                </thead>
+                <tbody>
+                {% block table_body %}
+                {% endblock %}
+                </tbody>
+            </table>
+        </div>
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+{% import 'layout/base_row.html.twig' as formRow %}
+
+{% block title %}{{ "product.action.add"|trans({},'ui') }}{% endblock %}
+
+{% block body %}
+    <div class="card me-5 ms-5">
+        <div class="card-body">
+            {% block product_title %}
+                <h1>{{ "product.action.add"|trans({},'ui') }}</h1>
+            {% endblock %}
+        </div>
+    </div>
+    <div class="card m-5">
+        <div class="card-body">
+            {{ form_start(form) }}
+            {% block name %}
+                {{ form_row(form.name) }}
+            {% endblock %}
+            {% block image %}
+                {% if form.vars.value.image.pathname is defined %}
+                    <div class="row">
+                        <div class="col">
+                            <img class="img-thumbnail" style="width: 80%; height: 100%"
+                                 src="{{ asset(form.vars.value.image.pathname) }}" alt="Product Image">
+                        </div>
+                        <div class="col">
+                            {{ form_row(form.image) }}
+                        </div>
+                    </div>
+                {% else %}
+                    {{ form_row(form.image) }}
+                {% endif %}
+            {% endblock %}
+            {% block category %}
+                {{ form_row(form.category) }}
+            {% endblock %}
+            {% block description %}
+                {{ form_row(form.description) }}
+            {% endblock %}
+
+            {% block barcode %}
+                {{ form_row(form.barcode) }}
+            {% endblock %}
+
+            <hr>
+
+            {% block netMoneyDTO %}
+                {{ form_row(form.priceDTO.netMoneyDTO) }}
+            {% endblock %}
+
+            {% block grossMoneyDTO %}
+                {{ form_row(form.priceDTO.grossMoneyDTO) }}
+            {% endblock %}
+
+            {% block vat %}
+                {{ form_row(form.priceDTO.vat) }}
+            {% endblock %}
+
+            {% block actions %}
+                {% block save %}
+                    <button type="submit" class="btn btn-primary"
+                            formnovalidate>{{ 'actions.save'|trans({},'ui') }}</button>
+                {% endblock %}
+                {% block back %}
+                    <a type="button" class="btn btn-secondary" href="{{ path('app_product_list') }}">
+                        {{ 'actions.back'|trans({},'ui') }}</a>
+                {% endblock %}
+            {% endblock %}
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

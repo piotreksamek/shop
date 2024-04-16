@@ -1,0 +1,56 @@
+actions:
+    save: 'Zapisz'
+    back: 'Wróć'
+
+product:
+    validator:
+        notFound: 'Nie znaleziono produktu'
+    create:
+        success: 'Pomyślnie utworzono produkt'
+    update:
+        success: 'Pomyślnie zaktualizowano produkt'
+    delete:
+        success: 'Pomyślnie usunięto produkt'
+    action:
+        add: 'Dodaj produkt'
+        edit: 'Edytuj produkt'
+    list:
+        title: 'Lista produktów'
+        fields:
+            name: 'Nazwa'
+            image: 'Obraz'
+            netValue: 'Cena netto'
+            grossValue: 'Cena brutto'
+            actions: 'Akcje'
+    form:
+        name: 'Nazwa produktu'
+        description: 'Opis produktu'
+        barcode: 'Kod kreskowy'
+        image: 'Obraz'
+    price:
+        form:
+            netMoneyDTO: 'Wartość netto'
+            grossMoneyDTO: 'Wartość brutto'
+            vat: 'VAT'
+category:
+    create:
+        success: 'Pomyślnie utworzono kategorie'
+    update:
+        success: 'Pomyślnie zaktualizowano kategorie'
+    delete:
+        success: 'Pomyślnie usunięto kategorie'
+    validator:
+            error:
+                hasProduct: 'Nie można usunąć kategorii ponieważ przypisane są produkty'
+    action:
+        add: 'Dodaj kategorie'
+        edit: 'Edytuj kategorie'
+    list:
+        title: 'Lista kategorii'
+        fields:
+            name: 'Nazwa'
+            priority: 'Priorytet'
+            actions: 'Akcje'
+    form:
+        name: 'Nazwa'
+        priority: 'Priorytet'

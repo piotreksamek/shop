@@ -1,0 +1,41 @@
+{% extends 'layout/list.html.twig' %}
+
+{% block title %}{{ "product.list.title"|trans({},'ui') }}{% endblock %}
+
+    {% block list_title %}
+        {{ "product.list.title"|trans({},'ui') }}
+    {% endblock %}
+    {% block actions %}
+        <a type="button" href="{{ path('app_product_create') }}" class="btn btn-primary ">{{ "product.action.add"|trans({},'ui') }}</a>
+    {% endblock %}
+{% block table_head %}
+    <tr>
+        <th class="w-25">{{ "product.list.fields.image"|trans({},'ui') }}</th>
+        <th>{{ "product.list.fields.name"|trans({},'ui') }}</th>
+        <th>{{ "product.list.fields.netValue"|trans({},'ui') }}</th>
+        <th>{{ "product.list.fields.grossValue"|trans({},'ui') }}</th>
+        <th class="text-end">{{ "product.list.fields.actions"|trans({},'ui') }}</th>
+    </tr>
+{% endblock %}
+{% block table_body %}
+    {% for product in products %}
+        <tr>
+            <td><img class="img-thumbnail w-50 h-50"
+                     src="{{ asset('uploads/' ~ product.image) }}" alt="Product Image">
+            </td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price.net|format_money }}</td>
+            <td>{{ product.price.gross|format_money }}</td>
+            <td class="text-end">
+                <a type="button" class="btn btn-primary"
+                   href="{{ path('app_product_update', {id: product.id} ) }}">
+                    <i class="bi bi-pencil-square bi">E</i>
+                </a>
+                <a type="button" class="btn btn-danger"
+                   href="{{ path('app_product_delete', {id: product.id} ) }}">
+                    <i class="bi bi-pencil-square bi">D</i>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+{% endblock %}

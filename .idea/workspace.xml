@@ -4,31 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96971ac8-f454-41c7-bf57-c88550b4e330" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/docker-compose.override.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.override.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/.env" afterDir="false" />
+    <list default="true" id="96971ac8-f454-41c7-bf57-c88550b4e330" name="Changes" comment="Create a CRUD for Product and Category / Create a Product's view in front">
       <change beforePath="$PROJECT_DIR$/shop_backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/assets/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/assets/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/config/packages/api_platform.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/config/packages/doctrine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/config/packages/translation.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/config/routes/api_platform.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/importmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/importmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/src/Application/AbstractApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/src/Application/AbstractApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/src/Application/Product/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/src/Application/Product/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/src/Application/Product/DTO/PriceDTO.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/src/Application/Product/DTO/PriceDTO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/src/Application/Product/DTO/ProductDTO.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/src/Application/Product/DTO/ProductDTO.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/src/Application/Product/Handler/Create.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/src/Application/Product/Handler/Create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/src/Application/Product/Handler/Delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/src/Application/Product/Handler/Delete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/src/Application/Product/Handler/Update.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/src/Application/Product/Handler/Update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/src/Application/Product/Repository.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/src/Application/Product/Repository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop_backend/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/shop_backend/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +17,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
@@ -444,23 +426,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/piotrek/Desktop/pf&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;php.override.implement.member.chooser.php.doc&quot;: &quot;NONE&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/piotrek/Downloads/PhpStorm-233.14808.18/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/productAndCategory",
+    "last_opened_file_path": "/home/piotrek/Desktop/pf",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "php.override.implement.member.chooser.php.doc": "NONE",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/home/piotrek/Downloads/PhpStorm-233.14808.18/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Vue/src/assets" />
@@ -523,10 +505,24 @@
       <workItem from="1711637308940" duration="4271000" />
       <workItem from="1712127753557" duration="619000" />
       <workItem from="1712665934489" duration="6403000" />
+      <workItem from="1713255287959" duration="545000" />
     </task>
+    <task id="LOCAL-00001" summary="Create a CRUD for Product and Category / Create a Product's view in front">
+      <option name="closed" value="true" />
+      <created>1713255570611</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713255570611</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Create a CRUD for Product and Category / Create a Product's view in front" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create a CRUD for Product and Category / Create a Product's view in front" />
   </component>
 </project>

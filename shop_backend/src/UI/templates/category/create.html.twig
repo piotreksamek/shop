@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+{% import 'layout/base_row.html.twig' as formRow %}
+
+{% block title %}{{ "category.action.add"|trans({},'ui') }}{% endblock %}
+
+{% block body %}
+    <div class="card me-5 ms-5">
+        <div class="card-body">
+            {% block category_title %}
+                <h1>{{ "category.action.add"|trans({},'ui') }}</h1>
+            {% endblock %}
+        </div>
+    </div>
+    <div class="card m-5">
+        <div class="card-body">
+            {{ form_start(form) }}
+            {% block name %}
+                {{ form_row(form.name) }}
+            {% endblock %}
+
+            {% block priority %}
+                {{ form_row(form.priority) }}
+            {% endblock %}
+
+            {% block actions %}
+                {% block save %}
+                    <button type="submit" class="btn btn-primary"
+                            formnovalidate>{{ 'actions.save'|trans({},'ui') }}</button>
+                {% endblock %}
+                {% block back %}
+                    <a type="button" class="btn btn-secondary" href="{{ path('app_category_list') }}">
+                        {{ 'actions.back'|trans({},'ui') }}</a>
+                {% endblock %}
+            {% endblock %}
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
